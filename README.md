@@ -36,4 +36,26 @@ Blood bank website
 -
 -
 -
+-![Screenshot (1)](https://user-images.githubusercontent.com/98723571/209468873-b41d2c19-5fae-40f3-ac33-0b0f105e88f3.png)
 -
+-
+-
+-![Screenshot (2)](https://user-images.githubusercontent.com/98723571/209468886-75f166ec-a996-436c-86d6-a8330706ff45.png)
+
+-
+-
+-
+-![Screenshot (3)](https://user-images.githubusercontent.com/98723571/209468891-f738e75f-93c5-4f77-a83d-c1c757735203.png)
+
+-
+-
+-![Screenshot (4)](https://user-images.githubusercontent.com/98723571/209468900-f13a2ed3-8019-4061-a653-de3fdc67d4b0.png)
+
+-
+-
+-
+-
+-
+-
+-
+
