@@ -1,0 +1,50 @@
+To create a database follow these steps:
+
+1.Install python-3.8.6-webinstall
+
+2.Install Xampp
+
+ i.open Appache(httpd.conf)  file in xampp and add following lines in it.
+
+ ii.Add
+       "  AddHandler cgi-script .py
+         ScriptInterpreterSource Registry-Strict "
+ 
+                                      
+         at end of the document
+
+
+ iii.search for " <IfModule dir_module> " in the document and add " index.py, default.py and home.py " as shown as below.
+
+
+        <IfModule dir_module>
+
+                            DirectoryIndex index.php index.pl index.cgi index.asp index.shtml index.html index.htm index.py \
+                            default.php default.pl default.cgi default.asp default.shtml default.html default.htm default.py \
+                            home.php home.pl home.cgi home.asp home.shtml home.html home.htm home.py
+        
+        </IfModule>
+
+ iv.Now start apache and mysql
+
+
+
+3.Go to command prompt and execute following commands
+
+  i.pip install pymysql
+
+  ii.pip show pymysql
+
+  iii.In that, copy the location and save it for further.
+
+4.now open your python database programs and add these following four lines at the top of your program
+
+  #!C:\Program Files (x86)\Python38-32\python.exe
+  print("Content-Type: text/html\n\n")
+  import sys
+  sys.path.append('<--paste pymysql location here-->')
+
+
+
+ 
+ 
