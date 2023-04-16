@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BLOOD BANK</title>
+<link rel="icon" type="image/x-icon" href="icon6.jpg ">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+body {
+        margin: 0
+      }
+ ul{
+	list-style-type:none;
+	margin:0;
+	padding:10px;
+	background-color: black;
+	overflow: hidden;
+}
+li{
+	float:right;
+	
+	text-align: center;
+}
+li a{
+	
+	display:block;
+	text-decoration:none;
+	color:white;
+	text-align: center;
+	padding:10px 10px;
+	margin-right:70px;
+}
+a:hover{
+	background-color:yellow;
+	color:red;
+}
+
+.slideshow-container {
+  max-width: 10000px;
+  position: relative;
+  margin: 0%;
+}
+
+
+
+
+
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 100%) {
+  .text {font-size: 11px}
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 200px;
+  right: 97px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.form-container {
+  max-width: 300px;
+  padding: 8px;
+  background-color: white;
+}
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 4px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container .btn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+button {
+  background-color:blue ;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 10px;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 45%; 
+}
+
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+
+
+
+<body style="background-color:#40E0D0;">
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Blood_bank" ><b>About</b></a></li>
+  
+   
+  <li><a href="#news" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><b>Register</b></a></li>
+  <li><a href="#login" onclick="return openForm();" ><b>Login</b></a></li>
+ <!--<li><a href="pro121.html" onclick=url('pro121.html');" ><b>Register</b></a></li>-->
+</ul>
+
+
+
+
+<div class="form-popup" id="myForm">
+    <form action="validation.py" method="POST" class="form-container" autocomplete="off">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" id="email" placeholder="Enter Email" name="gmail" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" id="psw" placeholder="Enter Password" name="pwd" required>
+    <!--<input type="button" value="Login" onclick="location.href = 'pro121.html';">-->
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()" >Close</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+<div class="slideshow-container">
+<div class="mySlides fade">
+  
+  <img src="blood21.jpg"style="width:100%;height:50%;">
+  
+</div>
+
+<div class="mySlides fade">
+  
+  <img src="p4.jpg" style="width:100%;height:80%;">
+  
+</div>
+<div class="mySlides fade">
+  
+  <img src="blood12.jfif" style="width:100%;height:80%;">
+  
+</div>
+
+<div class="mySlides fade">
+  
+  <img src="dark14.jpg" style="width:100%;height:80%;">
+  
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="id01" class="modal">
+  
+
+
+<form action="insertdb.py" method="POST" class="modal-content animate" autocomplete="off">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="login.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      
+
+  <label for="fname"><b>First name:</b></label>
+  <input type="text" id="fname" name="fname" placeholder="Enter first name" required><br><br>
+
+ <label for="lname"><b>Last name:<b></label>
+  <input type="text" id="lname" name="lname"  placeholder="Enter last name"required><br><br>
+
+<label for="password"><b>Password:</b></label>
+<input type="password" id="password" name="pwd"  placeholder="123@ma"required><br><br>
+<label for="password1"><b>Repeat Password:</b></label>
+<input type="password" id="password1" name="pwd1"  placeholder="123@ma"required><br><br>
+
+<label for="aadhar"><b>Aadhar no:</b></label>
+  <input type="text" id="aadhar" name="aadhar"  placeholder="Enter aadhar no" required><br><br>
+
+<label><b>Gender:</b></label>
+<input type="radio" id="male" name="gender" value="Male">
+	<label for="male">Male</label>
+<input type="radio" id="Female" name="gender" value="Female">
+	<label for="female">Female</label>
+<input type="radio" id="others" name="gender" value="others">
+	<label for="others">Others</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<label for="birthday"><b>Birthday:</b></label>
+<input type="date" id="birthday" name="birthday" required><br><br>
+
+<label for="gmail"><b>Gmail:</b></label>
+<input type="email" id="gmail" name="mail"  placeholder="abc@gmail.com"required>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+ <label for="phone"><b> Phone no:<b></label>
+  <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required><br><br>
+
+<label><b>Blood Group:</b></label>
+ <input list="bloodgroup" name="bloodgroup">
+  <datalist id="bloodgroup">
+    <option value="A positive (A+)">
+    <option value="A negative (A-)">
+    <option value="B positive (B+)">
+    <option value="B negative (B-)">
+    <option value="O positive (O+)">
+    <option value="O negative (O-)">
+    <option value="AB positive (AB+)">
+    <option value="AB negative (AB-)">
+  </datalist><br><br>
+
+
+ <p>By creating an account you agree to our <a href="#">Terms&Privacy.</a></p>
+      <button type="submit">Register</button>
+
+</div>
+
+
+    
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Already have an account?  <a href="main.html">Sign in</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+<br>
+<p style="color:red;font-size:40px;">
+Introduction</p><p style="color:black;font-size:25px;">
+Blood donation is a vital part of worldwide healthcare. It relates to blood transfusion as a life-sustaining and life-saving procedure as well as a form of therapeutic phlebotomy as a primary medical intervention. Over one hundred million units of blood are donated each year throughout the world.[1] This article will concisely discuss a short history of blood donation origin and purpose, blood testing, donor eligibility and selection, adverse effects of donation, blood donation as a primary medical intervention, and a brief discussion of pathogen reduction and inactivation for donated blood.
+</p> 
+<p style="color:red;font-size:40px;">
+Anatomy and Physiology</p><p style="color:black;font-size:25px;">
+Blood donation is most often performed by inserting a large bore needle (16G or 18G) into a peripheral vein, usually within the antecubital fossa. Veins on the dorsum of the hand or other prominent veins may be used in some individuals who do not have an otherwise easily accessible antecubital vein.</p>
+<p style="color:red;font-size:40px;">
+Indications</p><p style="color:black;font-size:25px;">
+Blood donation for transfusion is a vital step in the management of many clinical problems, with the two primary indications being anemia and acute blood loss. Blood donation itself is also used to primarily treat a small subset of medical conditions. At the beginning of the 20th century, Karl Landsteiner identified ABO blood groups, at which time blood typing of individuals was only beginning to be adopted as a universally standard practice. </p>
+<p style="color:red;font-size:40px;">
+Contraindications</p><p style="color:black;font-size:25px;">
+Contraindications to donating blood according to the AABB include:
+<br>
+"Anyone who has ever used needles to take drugs or any substance not prescribed by a clinician.
+Men who have had sexual contact with other men in the past 12 months.
+Anyone with a positive test for HIV.
+Men and women who have ever engaged in sex for money.
+Anyone who has had hepatitis since their eleventh birthday.
+Anyone who has had babesiosis or Chagas disease.
+Anyone who has taken Tegison for psoriasis.
+Anyone who has risk factors for variant Creutzfeldt-Jakob disease (CJD) or who has a blood relative with the disease.<br>
+Anyone who has risk factors for CJD, including:<br>
+Anyone who spent three months or more in the United Kingdom from 1980 through 1996
+Anyone who received a blood transfusion in the United Kingdom or France from 1980 to the present
+Anyone who has spent five years in Europe from 1980 to the present." </p>
+<p style="color:red;font-size:40px;">
+Personnel</p><p style="color:black;font-size:25px;">
+Most collection personnel involved in blood donation are certified phlebotomists. These personnel require a high school diploma and receive 1-2 months of classroom and hands-on training prior to becoming certified. Collection personnel may also be trained as LVNs, RNs, and EMTs, among others.</p>
+<p style="color:red;font-size:40px;">
+Preparation</p><p style="color:black;font-size:25px;">
+In preparation for blood donation, donors should be well rested, eat a full meal, and drink plenty of non-alcoholic, non-caffeinated beverages. Donors should refrain from heavy lifting, drinking alcohol, and smoking for several hours after donation.
+</p>
+<img style="align:center;" src="p1.jpg" alt="image" >
+<p style="color:red;font-size:40px;">
+Technique</p><p style="color:black;font-size:25px;">
+After the donor screening questionnaire is completed, the donor will be evaluated by a medical receptionist. This evaluation includes an assessment of vital signs (blood pressure, pulse, temperature), an arm check looking for needle tracks and signs of injury or trauma, and a peripheral finger stick to check blood hemoglobin levels. Following the screening, the donor will proceed to the donor floor for collection. The venipuncture site will be scrubbed with a cleaning solution (either iodine or chlorhexidine), and the needle will be inserted into a peripheral (antecubital) vein in a sterile fashion. The donor is continually monitored during collection, and the needle is removed and pressure applied to the wound once the appropriate blood volume has been collected (450 ml).</p>
+
+<iframe src='https://webchat.botframework.com/embed/health-8ttlmom?s=u6r0okj_CG0.QuczDhAS7zKuGcg3g7tPDNflBVXC8tJsxCkosOC7iQI' style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+ 
+  slides[slideIndex-1].style.display = "block";  
+  
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("mySlides fade").style.filter="blur(8px)";
+  
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html> 
