@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BLOOD BANK</title>
+<link rel="icon" type="image/x-icon" href="‪icon6.jpg">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+<meta name="viewport" content="width=device-width"/>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+	background: linear-gradient( #33ccff 0%, #ff99cc 100%)
+	backgroud-color:@aaa;
+	margin: 0;
+}
+h1.head{
+	background-color:#808000;
+	color:white;
+	margin:auto;
+	text-align:center;
+	padding:20px;
+	font-size:70px;
+	border:4px solid red;
+	
+}
+img.pic{
+	border-radius: 5%;
+	display: inline;
+	height:100px;
+	float:left;
+	bottom-padding:92%;
+
+	
+}
+.nav{
+	overflow:hidden;
+	background-color:black;
+	bottom-border:2px solid red;
+}
+.nav a{
+	float:left;
+	display:block;
+	color:white;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+}
+.nav a:hover{
+	background-color:white;
+	color:black;
+}
+#mark{
+	background-color:white;
+	color:#8b0000;
+	padding:2px;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+div.form{
+	padding-left:17%;
+
+}
+#dark{
+	
+	
+	top-padding:2px;
+}
+.button{
+	text-align:center;
+	padding:15px;
+	
+	
+ 	color:white;
+	background-color:black;
+}
+#dark:hover{
+	background-color:white;
+	color:black;
+}
+.search{
+	position:relative;
+	float:right;
+	top-margin:20px;
+	right-margin:0px;
+	padding:13px;
+}
+</style>
+<body>
+<h1 class="head"><img  class="pic" src="blood2.jpg"  alt="image">BLOOD BANK</h1>
+
+
+<div class="nav">
+	<a href="#" >&#8803;</a>
+	<a href="main.html">Home</a>
+	<a href ="https://en.wikipedia.org/wiki/Blood_bank" target="_top" >About</a>
+	<a href ="https://indianexpress.com/about/blood-banks/" target="_top" >News</a>
+	<a href ="tel:7207909030">Contact</a>
+	<a href="https://www.google.com/maps/search/blood+bank+about/@17.7013496,83.1028318,11z/data=!3m1!4b1?hl=en-US" target="_top" >Maps</a>
+	<a href="">Donate</a>	
+<button  id="dark" onclick="myFunction()" class="button" >Dark mode</button>
+
+<form action="retreive.py" method="POST" class="search">
+  <input type="search"  name="search"
+   placeholder="Search..."
+   aria-label="Search through site content">
+  <button type="submit">Search</button>
+
+</form>
+
+
+</div>
+
+<marquee id="mark">important updates are here....!</marquee>
+
+
+
+<div class="form">
+<br>
+
+<form action="donateinsertdb.py" method="POST" autocomplete="off">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" placeholder="Enter first name" required><br><br>
+
+ <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"  placeholder="Enter last name"required><br><br>
+<label for="gmail">Gmail:</label>
+<input type="email" id="gmail" name="mail"  placeholder="abc@gmail.com"required><br><br>
+
+
+<label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday" required><br><br>
+<label for="state1">State:</label>
+  <input type="text" id="state1" name="state" placeholder="Enter state" required><br><br>
+
+ <label for="Dict">District:</label>
+  <input type="text" id="Dict" name="district"  placeholder="Enter district" required><br><br>
+
+
+
+
+<label>Gender:</label>
+<input type="radio" id="male" name="gender" value="Male">
+	<label for="male">Male</label>
+<input type="radio" id="Female" name="gender" value="Female">
+	<label for="female">Female</label>
+<input type="radio" id="others" name="gender" value="others">
+	<label for="others">Others</label><br><br>
+
+
+ <label for="phone"> Phone no:</label>
+  <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required><br><br>
+
+
+<label for="aadhar">Aadhar no:</label>
+  <input type="text" id="aadhar" name="aadhar"  placeholder="Enter aadhar no" required><br><br>
+
+
+<label>Blood Group:</label>
+ <input list="bloodgroup" name="bloodgroup">
+  <datalist id="bloodgroup">
+    <option value="A positive (A+)">
+    <option value="A negative (A-)">
+    <option value="B positive (B+)">
+    <option value="B negative (B-)">
+    <option value="O positive (O+)">
+    <option value="O negative (O-)">
+    <option value="AB positive (AB+)">
+    <option value="AB negative (AB-)">
+  </datalist><br><br>
+
+<label for="ml">Blood in M/L:</label>
+<input type="text" id="ml" name="ml" placeholder="Enter Blood in ml" required><br><br>
+  
+  
+<input type="submit" value="Donate">
+<input type="reset">
+
+
+</form>
+
+
+</div>
+
+
+
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+
+</script>
+
+</body>
+</html>
